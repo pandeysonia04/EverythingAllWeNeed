@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -34,7 +36,7 @@ public class Product {
 	@Column(name ="description")
 	private String description;
 	
-	@Column(name ="unit-price")
+	@Column(name ="unit_price")
 	private  BigDecimal unitPrice;
 	
 	@Column(name ="image_url")
@@ -53,6 +55,10 @@ public class Product {
 	@Column(name ="last_updated")
 	@UpdateTimestamp
 	private Date lastUpdated;
+	
+	@ManyToOne
+	@JoinColumn(name="category_id", nullable=false)
+	private ProductCategory category;
 	
 	
 }

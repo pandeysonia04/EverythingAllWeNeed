@@ -10,6 +10,4 @@ export class Product {
     dateCreated!: Date;
     lastCreated!: Date;
 
-
-
 }

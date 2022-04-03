@@ -13,6 +13,11 @@
                     </div>
                 </div>
 
+                <!--if products empty then displaying a message-->
+                <div *ngIf="products?.length==0" class ="alert alert-warning col-md-12" role="alert">
+                    No Products found.
+                </div>
+
             </div>
         </div>
     </div>
